@@ -41,14 +41,14 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
         }
     }
 
-    @IBAction func saveButtonTapped(_ sender: UIButton) {
+    @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         if let name = nameTextField.text {
             employee = Employee(name: name, dateOfBirth: Date(), employeeType: .exempt)
             performSegue(withIdentifier: PropertyKeys.unwindToListIndentifier, sender: self)
         }
     }
 
-    @IBAction func cancelButtonTapped(_ sender: UIButton) {
+    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
         employee = nil
         performSegue(withIdentifier: PropertyKeys.unwindToListIndentifier, sender: self)
     }

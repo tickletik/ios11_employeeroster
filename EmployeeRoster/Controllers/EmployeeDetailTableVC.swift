@@ -30,7 +30,7 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    var datePickerIndexPath = IndexPath(row: 2, section: 1)
+    var datePickerIndexPath = IndexPath(row: 2, section: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +72,16 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
         print("-- not in datePIckerIndexPath.row")
         print("-- end heightForRowAt --")
         return 44.0
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        // if date picker row was selected, then switch off
+        if indexPath.row == datePickerIndexPath.row - 1 {
+            isEditingBirthday = !isEditingBirthday
+        }
+        
     }
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {

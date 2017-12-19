@@ -43,15 +43,23 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
         if let employee = employee {
             navigationItem.title = employee.name
             nameTextField.text = employee.name
+            
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .medium
             dobLabel.text = dateFormatter.string(from: employee.dateOfBirth)
             dobLabel.textColor = .black
+            
             employeeTypeLabel.text = employee.employeeType.description()
             employeeTypeLabel.textColor = .black
         } else {
             navigationItem.title = "New Employee"
         }
+    }
+    
+    func formatDateOfBirth() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        return dateFormatter.string(from: birthdayPicker.date)
     }
     
     func updateDOB() {
@@ -61,9 +69,7 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
             dobLabel.textColor = .gray
         }
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
-        dobLabel.text = dateFormatter.string(from: birthdayPicker.date)
+        dobLabel.text = formatDateOfBirth()
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -91,7 +97,8 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         if let name = nameTextField.text {
-            employee = Employee(name: name, dateOfBirth: Date(), employeeType: .exempt)
+            
+            employee = Employee(name: name, dateOfBirth: birthdayPicker.date, employeeType: .exempt)
             performSegue(withIdentifier: PropertyKeys.unwindToListIndentifier, sender: self)
         }
     }

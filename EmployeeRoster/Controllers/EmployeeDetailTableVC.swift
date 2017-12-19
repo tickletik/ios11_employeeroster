@@ -20,6 +20,16 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
     
     var employee: Employee?
     
+    var isEditingBirthday: Bool = false {
+        didSet {
+            
+            // following methods esure that table view calls
+            // it's delegate methods whenever isEditingBirthday changes
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

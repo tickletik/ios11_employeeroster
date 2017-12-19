@@ -139,12 +139,34 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="216" id="WHI-83-Src">
+                                        <rect key="frame" x="0.0" y="123" width="375" height="216"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WHI-83-Src" id="pWs-he-ZXn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="215.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Rkh-y9-bqR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="215.5"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="535381780.506082">
+                                                        <!--2017-12-19 13:09:40 +0000-->
+                                                    </date>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Rkh-y9-bqR" secondAttribute="bottom" id="3we-ZV-gRW"/>
+                                                <constraint firstItem="Rkh-y9-bqR" firstAttribute="top" secondItem="pWs-he-ZXn" secondAttribute="top" id="Lp2-UN-N6r"/>
+                                                <constraint firstItem="Rkh-y9-bqR" firstAttribute="leading" secondItem="pWs-he-ZXn" secondAttribute="leading" id="RTW-1P-Zwv"/>
+                                                <constraint firstAttribute="trailing" secondItem="Rkh-y9-bqR" secondAttribute="trailing" id="i1k-xb-NzW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="aDF-tK-lSx">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="u3K-uz-UjH">
-                                        <rect key="frame" x="0.0" y="159" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="375" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u3K-uz-UjH" id="6dm-Hg-fuN">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -205,7 +227,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pz-Jj-qkM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KvK-va-bCl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1175" y="-188"/>
+            <point key="canvasLocation" x="1169" y="-99"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i7L-VO-J1s">

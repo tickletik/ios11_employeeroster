@@ -14,6 +14,7 @@
 		E35D98851FE90C9200D654B5 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D98841FE90C9200D654B5 /* Employee.swift */; };
 		E35D98871FE90CE900D654B5 /* EmployeeDetailTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D98861FE90CE900D654B5 /* EmployeeDetailTableVC.swift */; };
 		E35D98891FE90DEA00D654B5 /* EmployeeListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D98881FE90DEA00D654B5 /* EmployeeListTableVC.swift */; };
+		E35D988B1FE9515400D654B5 /* EmployeeTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D988A1FE9515400D654B5 /* EmployeeTypeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E35D98841FE90C9200D654B5 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		E35D98861FE90CE900D654B5 /* EmployeeDetailTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailTableVC.swift; sourceTree = "<group>"; };
 		E35D98881FE90DEA00D654B5 /* EmployeeListTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListTableVC.swift; sourceTree = "<group>"; };
+		E35D988A1FE9515400D654B5 /* EmployeeTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTypeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				E35D98861FE90CE900D654B5 /* EmployeeDetailTableVC.swift */,
 				E35D98881FE90DEA00D654B5 /* EmployeeListTableVC.swift */,
+				E35D988A1FE9515400D654B5 /* EmployeeTypeVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E35D98871FE90CE900D654B5 /* EmployeeDetailTableVC.swift in Sources */,
+				E35D988B1FE9515400D654B5 /* EmployeeTypeVC.swift in Sources */,
 				E35D98891FE90DEA00D654B5 /* EmployeeListTableVC.swift in Sources */,
 				E35D98851FE90C9200D654B5 /* Employee.swift in Sources */,
 				E35D98701FE90C5B00D654B5 /* AppDelegate.swift in Sources */,

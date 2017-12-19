@@ -30,7 +30,7 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    var datePickerIndexPath = IndexPath(row: 3, section: 1)
+    var datePickerIndexPath = IndexPath(row: 2, section: 1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,15 +55,23 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
+        print("\n-- beg heightForRowAt --")
         if indexPath.row == datePickerIndexPath.row {
+            print("-- in datePickerIndexPath.row")
             if isEditingBirthday {
-                return 216
+                print("-- isEiditing")
+                print("-- end heightForRowAt --")
+                return 216.0
             }
             
-            return 0
+            print("-- no isEditing")
+            print("-- end heightForRowAt --")
+            return 0.0
         }
         
-        return 44
+        print("-- not in datePIckerIndexPath.row")
+        print("-- end heightForRowAt --")
+        return 44.0
     }
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {

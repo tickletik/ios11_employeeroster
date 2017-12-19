@@ -17,6 +17,7 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var dobLabel: UILabel!
     @IBOutlet weak var employeeTypeLabel: UILabel!
+    @IBOutlet weak var birthdayPicker: UIDatePicker!
     
     var employee: Employee?
     
@@ -52,6 +53,18 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
             navigationItem.title = "New Employee"
         }
     }
+    
+    func updateDOB() {
+        if isEditingBirthday {
+            dobLabel.textColor = .black
+        } else {
+            dobLabel.textColor = .gray
+        }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dobLabel.text = dateFormatter.string(from: birthdayPicker.date)
+    }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -65,11 +78,13 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: true)
         
         // if date picker row was selected, then switch off
         if indexPath.row == datePickerIndexPath.row - 1 {
             isEditingBirthday = !isEditingBirthday
+            updateDOB()
         }
         
     }
@@ -84,6 +99,10 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
         employee = nil
         performSegue(withIdentifier: PropertyKeys.unwindToListIndentifier, sender: self)
+    }
+    
+    @IBAction func dobChanged(_ sender: UIDatePicker) {
+        updateDOB()
     }
     
     // MARK: - Text Field Delegate

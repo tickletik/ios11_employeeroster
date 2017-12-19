@@ -9,13 +9,14 @@
 import UIKit
 
 protocol EmployeeTypeDelegate {
-    func didSelect(employeeType: EmployeeType)
+    func didSelect(employeeType: EmployeeType?)
 }
 
 class EmployeeTypeVC: UITableViewController {
     
     // keeps track of if an employee type already exists
     var employeeType: EmployeeType?
+    var delegate: EmployeeTypeDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +52,8 @@ class EmployeeTypeVC: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let type = EmployeeType.all[indexPath.row]
-        employeeType = type
+        employeeType = EmployeeType.all[indexPath.row]
+        delegate?.didSelect(employeeType: employeeType)
         
         tableView.reloadData()
     }

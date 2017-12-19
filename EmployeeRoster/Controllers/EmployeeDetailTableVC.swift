@@ -123,4 +123,10 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate, Employe
         return false
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "EmployeeTypeSegue" else { return }
+        
+        let destination = segue.destination as? EmployeeTypeVC
+        destination?.delegate = self
+    }
 }

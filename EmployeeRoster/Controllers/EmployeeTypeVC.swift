@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol EmployeeTypeDelegate {
+    func didSelect(employeeType: EmployeeType)
+}
+
 class EmployeeTypeVC: UITableViewController {
     
     // keeps track of if an employee type already exists

@@ -55,22 +55,12 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        print("\n-- beg heightForRowAt --")
         if indexPath.row == datePickerIndexPath.row {
-            print("-- in datePickerIndexPath.row")
             if isEditingBirthday {
-                print("-- isEiditing")
-                print("-- end heightForRowAt --")
                 return 216.0
             }
-            
-            print("-- no isEditing")
-            print("-- end heightForRowAt --")
             return 0.0
         }
-        
-        print("-- not in datePIckerIndexPath.row")
-        print("-- end heightForRowAt --")
         return 44.0
     }
     

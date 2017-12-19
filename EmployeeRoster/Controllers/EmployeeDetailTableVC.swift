@@ -10,8 +10,11 @@ import UIKit
 
 class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate, EmployeeTypeDelegate {
  
+    var employeeType: EmployeeType?
+    
     func didSelect(employeeType: EmployeeType?) {
-        
+            self.employeeType = employeeType
+        updateEmployeeType()
     }
     
 
@@ -58,6 +61,17 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate, Employe
             employeeTypeLabel.textColor = .black
         } else {
             navigationItem.title = "New Employee"
+        }
+    }
+    
+    func updateEmployeeType() {
+        if let employeeType = employeeType {
+            employeeTypeLabel.textColor = .black
+            
+            let currentFont = employeeTypeLabel.font
+            employeeTypeLabel.font = UIFont(name: (currentFont?.fontName)!, size: 17.0)
+            
+            employeeTypeLabel.text = employeeType.description()
         }
     }
     

@@ -30,6 +30,8 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
         }
     }
     
+    var datePickerIndexPath = IndexPath(row: 3, section: 1)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,6 +53,19 @@ class EmployeeDetailTableVC: UITableViewController, UITextFieldDelegate {
         }
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.row == datePickerIndexPath.row {
+            if isEditingBirthday {
+                return 216
+            }
+            
+            return 0
+        }
+        
+        return 44
+    }
+    
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         if let name = nameTextField.text {
             employee = Employee(name: name, dateOfBirth: Date(), employeeType: .exempt)
